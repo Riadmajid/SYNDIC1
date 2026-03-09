@@ -748,6 +748,88 @@
             animation: slideIn 0.4s ease-out;
             max-width: 350px;
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .toast-notification:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Announcement Details & Comments */
+        .announce-detail-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+
+        .comments-section {
+            margin-top: 25px;
+            border-top: 2px solid #f1f5f9;
+            padding-top: 20px;
+        }
+
+        .comment-item {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 12px 15px;
+            margin-bottom: 12px;
+            border-left: 4px solid var(--secondary);
+            position: relative;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+
+        .comment-name {
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .comment-date {
+            color: #94a3b8;
+        }
+
+        .comment-text {
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--dark);
+        }
+
+        .comment-delete-btn {
+            background: none;
+            border: none;
+            color: #ef4444;
+            cursor: pointer;
+            font-size: 12px;
+            padding: 5px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .comment-form {
+            margin-top: 20px;
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .announce-item {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .announce-item:hover {
+            transform: scale(1.02);
+            border-color: var(--secondary);
         }
 
         html[dir="rtl"] .toast-notification {
@@ -1091,7 +1173,10 @@
                 th_date: "التاريخ", th_desc: "البيان", th_amount: "المبلغ", th_receipt: "التوصيل", curr: "DHM", year_word: "سنة",
                 title_announcements: "📢 الإعلانات", title_chat: "💬 الدردشة", full_table_title: "الجدول السنوي للأداء", add_expense: "إضافة مصروف",
                 add_building: "+ إضافة عمارة", add_apartment: "+ إضافة شقة",
-                change_pwd: "تغيير كلمة المرور", old_pwd: "كلمة المرور الحالية", new_pwd: "كلمة المرور الجديدة", confirm_pwd: "تأكيد كلمة المرور", pwd_success: "تم تغيير كلمة المرور بنجاح!", pwd_mismatch: "كلمات المرور غير متطابقة أو غير صالحة!", old_pwd_wrong: "كلمة المرور القديمة خاطئة!", btn_save: "حفظ"
+                change_pwd: "تغيير كلمة المرور", old_pwd: "كلمة المرور الحالية", new_pwd: "كلمة المرور الجديدة", confirm_pwd: "تأكيد كلمة المرور", pwd_success: "تم تغيير كلمة المرور بنجاح!", pwd_mismatch: "كلمات المرور غير متطابقة أو غير صالحة!", old_pwd_wrong: "كلمة المرور القديمة خاطئة!", btn_save: "حفظ",
+                title_comments: "💬 التعليقات", no_comments: "لا توجد تعليقات بعد.", ph_comment: "اكتب تعليقك هنا...", btn_details: "عرض التفاصيل ←",
+                btn_like: "إعجاب", btn_dislike: "لم يعجبني", btn_reply: "رد", title_add_reply: "إضافة رد",
+                title_new_ann: "إعلان جديد", lbl_ann_title: "العنوان", lbl_ann_msg: "نص الإعلان", lbl_ann_photo: "📸 إرفاق صورة (اختياري)", btn_publish: "نشر الإعلان", publishing: "جاري النشر...", title_ann_photo: "صورة الإعلان", btn_download: "تحميل الصورة ⬇️", err_load_photo: "❌ تعذر تحميل الصورة"
             },
             fr: {
                 app_title: "🏢 ZAINEB 4", nav_dashboard: "Tableau de bord", nav_apartments: "Immeubles", nav_expenses: "Dépenses", nav_comm: "Comm.",
@@ -1101,7 +1186,10 @@
                 th_date: "Date", th_desc: "Libellé", th_amount: "Montant", th_receipt: "Reçu", curr: "MAD", year_word: "Année",
                 title_announcements: "📢 Annonces", title_chat: "💬 Chat", full_table_title: "Tableau de paiement annuel", add_expense: "Ajouter Dépense",
                 add_building: "+ Bâtiment", add_apartment: "+ Appartement",
-                change_pwd: "Changer le mot de passe", old_pwd: "Ancien mot de passe", new_pwd: "Nouveau mot de passe", confirm_pwd: "Confirmer le mot de passe", pwd_success: "Mot de passe modifié!", pwd_mismatch: "Les mots de passe ne correspondent pas!", old_pwd_wrong: "Ancien mot de passe incorrect!", btn_save: "Enregistrer"
+                change_pwd: "Changer le mot de passe", old_pwd: "Ancien mot de passe", new_pwd: "Nouveau mot de passe", confirm_pwd: "Confirmer le mot de passe", pwd_success: "Mot de passe modifié!", pwd_mismatch: "Les mots de passe ne correspondent pas!", old_pwd_wrong: "Ancien mot de passe incorrect!", btn_save: "Enregistrer",
+                title_comments: "💬 Commentaires", no_comments: "Pas encore de commentaires.", ph_comment: "Écrivez votre commentaire...", btn_details: "Voir détails ←",
+                btn_like: "J'aime", btn_dislike: "Je n'aime pas", btn_reply: "Répondre", title_add_reply: "Ajouter une réponse",
+                title_new_ann: "Nouvel Annonce", lbl_ann_title: "Titre", lbl_ann_msg: "Message", lbl_ann_photo: "📸 Joindre une image (optionnel)", btn_publish: "Publier", publishing: "Publication...", title_ann_photo: "Image de l'annonce", btn_download: "Télécharger ⬇️", err_load_photo: "❌ Échec du chargement"
             },
             en: {
                 app_title: "🏢 Syndic Manager", nav_dashboard: "Dashboard", nav_apartments: "Buildings", nav_expenses: "Expenses", nav_comm: "Comm.",
@@ -1111,7 +1199,9 @@
                 th_date: "Date", th_desc: "Description", th_amount: "Amount", th_receipt: "Receipt", curr: "MAD", year_word: "Year",
                 title_announcements: "📢 Announcements", title_chat: "💬 Chat", full_table_title: "Yearly Payment Table", add_expense: "Add Expense",
                 add_building: "+ Building", add_apartment: "+ Apartment",
-                change_pwd: "Change Password", old_pwd: "Old Password", new_pwd: "New Password", confirm_pwd: "Confirm Password", pwd_success: "Password changed successfully!", pwd_mismatch: "Passwords do not match or invalid!", old_pwd_wrong: "Incorrect old password!", btn_save: "Save"
+                change_pwd: "Change Password", old_pwd: "Old Password", new_pwd: "New Password", confirm_pwd: "Confirm Password", pwd_success: "Password changed successfully!", pwd_mismatch: "Passwords do not match or invalid!", old_pwd_wrong: "Incorrect old password!", btn_save: "Save",
+                btn_like: "Like", btn_dislike: "Dislike", btn_reply: "Reply", title_add_reply: "Add Reply",
+                title_new_ann: "New Announcement", lbl_ann_title: "Title", lbl_ann_msg: "Message", lbl_ann_photo: "📸 Attach image (optional)", btn_publish: "Publish", publishing: "Publishing...", title_ann_photo: "Announcement Image", btn_download: "Download ⬇️", err_load_photo: "❌ Load failed"
             }
         };
 
@@ -1240,7 +1330,7 @@
         }
 
         // DATABASE SYNC
-        db.collection("syndic_data").doc("main").onSnapshot(doc => {
+        db.collection("syndic_data").doc("zaineb4").onSnapshot(doc => {
             const statusIndicator = document.getElementById('sync-status');
             if (statusIndicator) {
                 statusIndicator.style.background = '#10b981'; // Green
@@ -1263,7 +1353,7 @@
 
                 if (!isLoaded) { isLoaded = true; document.getElementById('loadingScreen').style.display = 'none'; init(); lastChatCount = data.chat ? data.chat.length : 0; }
                 refreshCurrentView();
-            } else { db.collection("syndic_data").doc("main").set(data); }
+            } else { db.collection("syndic_data").doc("zaineb4").set(data); }
         }, err => {
             console.error("Snapshot error:", err);
             const statusIndicator = document.getElementById('sync-status');
@@ -1278,7 +1368,7 @@
             }
         });
 
-        function saveData() { db.collection("syndic_data").doc("main").set(data).catch(e => console.error(e)); }
+        function saveData() { db.collection("syndic_data").doc("zaineb4").set(data).catch(e => console.error(e)); }
 
         function init() {
             const now = new Date();
@@ -1430,6 +1520,20 @@
                 let bld = data.buildings.find(b => b.id === a.buildingId);
                 let latestDate = new Date(a.lastPaidTime);
                 let latestAmt = a.lastTotal || 0;
+
+                // Fallback: if amount is 0, try to find the actual value in payments
+                if (latestAmt === 0) {
+                    const aptPayments = Object.keys(data.payments)
+                        .filter(k => k.startsWith(`${a.id}_`))
+                        .map(k => ({ key: k, val: data.payments[k] }));
+                    if (aptPayments.length > 0) {
+                        // Just take the first one found or we could sort by date, 
+                        // but usually the most recent payment is what we want.
+                        // For simplicity in this display, any positive amount is better than 0.
+                        latestAmt = aptPayments[aptPayments.length - 1].val;
+                    }
+                }
+
                 let latestDateString = latestDate.toLocaleDateString();
                 return `<tr><td><b>${a.name}</b><br><small>${bld?.name || ''}</small></td><td>${latestDateString}</td><td class="text-success" style="font-weight:800;">${latestAmt} ${t('curr')}</td></tr>`;
             }).join('');
@@ -1838,36 +1942,131 @@
         function renderAnnouncements() {
             const list = document.getElementById('announcementsList');
             list.innerHTML = data.announcements.map(ann => `
-                <div style="background: #f8fafc; padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0; position:relative;">
-                    <button onclick="requireAuth(() => deleteAnnouncement(${ann.id}))" style="position:absolute; top:5px; left:5px; border:none; background:none; cursor:pointer; opacity:0.5;">🗑️</button>
+                <div class="announce-item" style="background: #f8fafc; padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0; position:relative;" onclick="openAnnounceDetail(${ann.id})">
+                    <button onclick="event.stopPropagation(); requireAuth(() => deleteAnnouncement(${ann.id}))" style="position:absolute; top:5px; left:5px; border:none; background:none; cursor:pointer; opacity:0.5;">🗑️</button>
                     <h4 style="margin:0; color: var(--primary);">${ann.title}</h4>
-                    <p style="margin:5px 0 10px 0; font-size:14px;">${ann.msg}</p>
-                    ${ann.hasImage ? `<button class="btn" style="padding:5px 10px; font-size:12px; background:#f1f5f9; color:var(--primary);" onclick="viewAnnounceImage(${ann.id})">🖼️ عرض الصورة</button>` : ''}
+                    <p style="margin:5px 0 10px 0; font-size:14px; color: #4b5563; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${ann.msg}</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:11px; color:#94a3b8;">🕒 ${ann.date || ''}</span>
+                        <span style="font-size:12px; font-weight:700; color:var(--secondary);">${t('btn_details')}</span>
+                    </div>
                 </div>
             `).join('');
         }
 
+        window.openAnnounceDetail = (annId) => {
+            const ann = data.announcements.find(a => a.id == annId);
+            if (!ann) return;
+
+            let modal = document.getElementById('modalBody');
+            modal.innerHTML = `
+                <div class="announce-detail-view" style="max-height: 80vh; overflow-y: auto; padding-left: 5px;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:15px;">
+                        <h2 style="margin:0; color:var(--primary); font-size:22px;">${ann.title}</h2>
+                        <span style="font-size:12px; color:#94a3b8; background:#f1f5f9; padding:4px 8px; border-radius:6px;">🕒 ${ann.date || ''}</span>
+                    </div>
+
+                    <div id="annDetailContent" style="font-size:16px; line-height:1.6; color:var(--dark); margin-bottom:20px; white-space: pre-wrap;">${ann.msg}</div>
+
+                    <div id="annDetailImgBox" style="display:none;">
+                        <div id="annDetailImgLoading" style="text-align:center; padding:20px;"><div class="spinner" style="margin:0 auto;"></div></div>
+                        <img id="annDetailImg" class="announce-detail-img" style="display:none;">
+                    </div>
+
+                    <div class="comments-section">
+                        <h4 style="margin-bottom:15px;">${t('title_comments')}</h4>
+                        <div id="commentsList">
+                            ${(ann.comments || []).map(c => `
+                                <div class="comment-item">
+                                    <div class="comment-header">
+                                        <span class="comment-name">${c.name}</span>
+                                        <span class="comment-date">${c.date}</span>
+                                    </div>
+                                    <div class="comment-text">${c.text}</div>
+                                    <button class="comment-delete-btn" style="${isAuthenticated ? 'display:block' : ''}" onclick="deleteComment(${annId}, ${c.id})">🗑️ Delete</button>
+                                </div>
+                            `).join('') || `<p style="color:#94a3b8; font-size:14px; text-align:center;">${t('no_comments')}</p>`}
+                        </div>
+
+                        <div class="comment-form">
+                            <div style="display:flex; gap:10px; margin-bottom:10px;">
+                                <input type="text" id="commName" placeholder="Name" style="flex:1" value="Resident">
+                            </div>
+                            <div style="display:flex; gap:10px;">
+                                <textarea id="commText" placeholder="${t('ph_comment')}" style="flex:1; border-radius:8px; padding:10px; border:1px solid #cbd5e1;" rows="2"></textarea>
+                                <button class="btn btn-primary" onclick="addComment(${annId})">🚀</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('universalModal').style.display = 'flex';
+
+            if (ann.hasImage) {
+                const imgBox = document.getElementById('annDetailImgBox');
+                imgBox.style.display = 'block';
+                db.collection("syndic_announcements_images").doc(annId.toString()).get().then(doc => {
+                    document.getElementById('annDetailImgLoading').style.display = 'none';
+                    if (doc.exists && doc.data().image) {
+                        const img = document.getElementById('annDetailImg');
+                        img.src = "data:image/jpeg;base64," + doc.data().image.replace(/\s/g, '');
+                        img.style.display = 'block';
+                    }
+                });
+            }
+        };
+
+        window.addComment = (annId) => {
+            const name = document.getElementById('commName').value.trim() || 'Resident';
+            const text = document.getElementById('commText').value.trim();
+            if (!text) return;
+
+            const ann = data.announcements.find(a => a.id == annId);
+            if (!ann) return;
+
+            if (!ann.comments) ann.comments = [];
+            ann.comments.push({
+                id: Date.now(),
+                name: name,
+                text: text,
+                date: new Date().toLocaleString([], { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })
+            });
+
+            saveData();
+            openAnnounceDetail(annId); // Refresh modal
+        };
+
+        window.deleteComment = (annId, commId) => {
+            requireAuth(() => {
+                const ann = data.announcements.find(a => a.id == annId);
+                if (!ann || !ann.comments) return;
+                ann.comments = ann.comments.filter(c => c.id !== commId);
+                saveData();
+                openAnnounceDetail(annId); // Refresh modal
+            });
+        };
+
         window.openAddAnnounceModal = () => {
             let modal = document.getElementById('modalBody');
             modal.innerHTML = `
-                <h3 style="color:var(--primary);">إعلان جديد</h3>
-                <div class="input-group"><label>العنوان</label><input type="text" id="annT" placeholder="Title"></div>
-                <div class="input-group"><label>نص الإعلان</label><textarea id="annM" rows="3" placeholder="Message"></textarea></div>
+                <h3 style="color:var(--primary);">${t('title_new_ann')}</h3>
+                <div class="input-group"><label>${t('lbl_ann_title')}</label><input type="text" id="annT" placeholder="Title"></div>
+                <div class="input-group"><label>${t('lbl_ann_msg')}</label><textarea id="annM" rows="3" placeholder="Message"></textarea></div>
                 <div class="input-group">
-                    <label>📸 إرفاق صورة (اختياري)</label>
+                    <label>${t('lbl_ann_photo')}</label>
                     <input type="file" id="annFile" accept="image/*" style="padding:10px; background:#f8fafc; border-radius:8px; border:1px dashed #cbd5e1; width:100%;">
                 </div>
-                <button id="btnSaveAnn" class="btn btn-primary" style="width:100%; margin-top:15px;" onclick="saveAnnouncement()">نشر الإعلان</button>
+                <button id="btnSaveAnn" class="btn btn-primary" style="width:100%; margin-top:15px;" onclick="saveAnnouncement()">${t('btn_publish')}</button>
             `;
             window.saveAnnouncement = async () => {
-                let t = document.getElementById('annT').value;
-                let m = document.getElementById('annM').value;
+                let titleVal = document.getElementById('annT').value;
+                let msgVal = document.getElementById('annM').value;
                 let file = document.getElementById('annFile').files[0];
 
-                if (t && m) {
+                if (titleVal && msgVal) {
                     const btn = document.getElementById('btnSaveAnn');
                     btn.disabled = true;
-                    btn.innerText = "جاري النشر...";
+                    btn.innerText = t('publishing');
 
                     const annId = Date.now();
                     let hasImage = false;
@@ -1882,7 +2081,7 @@
                         }
                     }
 
-                    data.announcements.push({ id: annId, title: t, msg: m, date: new Date().toLocaleDateString(), hasImage: hasImage });
+                    data.announcements.push({ id: annId, title: titleVal, msg: msgVal, date: new Date().toLocaleDateString(), hasImage: hasImage });
                     saveData();
                     closeModal();
                     renderAnnouncements();
@@ -1904,14 +2103,14 @@
                 <div style="text-align:center;">
                     <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #eee; padding-bottom:10px; margin-bottom:15px;">
                         <button onclick="closeModal()" style="background:var(--danger); color:white; border:none; border-radius:8px; width:30px; height:30px; cursor:pointer;">✖</button>
-                        <h3 style="margin:0; color:var(--primary);">صورة الإعلان</h3>
+                        <h3 style="margin:0; color:var(--primary);">${t('title_ann_photo')}</h3>
                     </div>
                     <div id="annImgLoading" style="padding:40px;"><div class="spinner" style="margin:0 auto;"></div></div>
                     <div id="annImgContainer" style="display:none;">
                         <img id="annImg" style="width:100%; border-radius:12px; margin-bottom:15px;">
-                        <a id="annImgDownload" href="#" download="announcement.jpg" class="btn btn-secondary" style="color:var(--secondary); text-decoration:none; font-weight:bold;">تحميل الصورة ⬇️</a>
+                        <a id="annImgDownload" href="#" download="announcement.jpg" class="btn btn-secondary" style="color:var(--secondary); text-decoration:none; font-weight:bold;">${t('btn_download')}</a>
                     </div>
-                    <div id="annImgError" style="color:var(--danger); display:none; padding:20px;">❌ تعذر تحميل الصورة</div>
+                    <div id="annImgError" style="color:var(--danger); display:none; padding:20px;">${t('err_load_photo')}</div>
                 </div>
             `;
             document.getElementById('universalModal').style.display = 'flex';
@@ -1947,11 +2146,30 @@
         function renderChat() {
             const c = document.getElementById('chatContainer');
             c.innerHTML = data.chat.map(m => `
-                <div class="chat-msg">
+                <div class="chat-msg" style="margin-bottom: 20px; position: relative;">
                     <button class="delete-btn" onclick="requireAuth(() => deleteChatMessage(${m.id}))">🗑️</button>
                     <span class="sender">${m.name}</span>
                     <p class="text">${m.msg}</p>
                     <span class="time">${m.time}</span>
+
+                    <div class="chat-actions" style="display: flex; gap: 15px; margin-top: 5px; font-size: 13px;">
+                        <span style="cursor: pointer; color: var(--primary); font-weight: bold; display: flex; align-items: center; gap: 4px;" onclick="likeChatMessage(${m.id})">👍 ${m.likes || 0}</span>
+                        <span style="cursor: pointer; color: #64748b; display: flex; align-items: center; gap: 4px;" onclick="dislikeChatMessage(${m.id})">👎 ${m.dislikes || 0}</span>
+                        <span style="cursor: pointer; color: var(--secondary); font-weight: bold; display: flex; align-items: center; gap: 4px;" onclick="openChatReplyModal(${m.id})">💬 ${t('btn_reply')}</span>
+                    </div>
+
+                    ${(m.replies || []).length > 0 ? `
+                        <div class="chat-replies" style="margin-top: 10px; padding-left: 20px; border-left: 2px solid #e2e8f0; margin-left: 10px;">
+                            ${m.replies.map(r => `
+                                <div style="background: white; padding: 8px 12px; border-radius: 8px; margin-bottom: 5px; font-size: 13px; position: relative; border: 1px solid #f1f5f9;">
+                                    ${isAuthenticated ? `<button onclick="deleteChatReply(${m.id}, ${r.id})" style="position: absolute; top: 2px; right: 2px; border: none; background: none; cursor: pointer; color: #ef4444; font-size: 10px;">🗑️</button>` : ''}
+                                    <div style="font-weight: bold; color: var(--secondary); margin-bottom: 2px;">${r.name}</div>
+                                    <div>${r.text}</div>
+                                    <div style="font-size: 10px; color: #94a3b8; margin-top: 3px;">${r.date}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    ` : ''}
                 </div>
             `).join('');
             c.scrollTop = c.scrollHeight;
@@ -1962,6 +2180,66 @@
             saveData();
             renderChat();
         }
+
+        window.likeChatMessage = (id) => {
+            const m = data.chat.find(x => x.id == id);
+            if (m) {
+                m.likes = (m.likes || 0) + 1;
+                saveData();
+                renderChat();
+            }
+        };
+
+        window.dislikeChatMessage = (id) => {
+            const m = data.chat.find(x => x.id == id);
+            if (m) {
+                m.dislikes = (m.dislikes || 0) + 1;
+                saveData();
+                renderChat();
+            }
+        };
+
+        window.openChatReplyModal = (id) => {
+            let modal = document.getElementById('modalBody');
+            modal.innerHTML = `
+                <h3 style="color:var(--secondary);">${t('title_add_reply')}</h3>
+                <div class="input-group"><label>${t('ph_chat_name')}</label><input type="text" id="repName" value="Resident"></div>
+                <div class="input-group"><label>${t('btn_reply')}</label><textarea id="repText" rows="2" placeholder="..."></textarea></div>
+                <button class="btn btn-secondary" style="width:100%; margin-top:15px;" onclick="addChatReply(${id})">${t('btn_send_chat') || 'Send'}</button>
+            `;
+            document.getElementById('universalModal').style.display = 'flex';
+        };
+
+        window.addChatReply = (msgId) => {
+            const name = document.getElementById('repName').value.trim() || 'Resident';
+            const text = document.getElementById('repText').value.trim();
+            if (!text) return;
+
+            const m = data.chat.find(x => x.id == msgId);
+            if (m) {
+                if (!m.replies) m.replies = [];
+                m.replies.push({
+                    id: Date.now(),
+                    name: name,
+                    text: text,
+                    date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                });
+                saveData();
+                closeModal();
+                renderChat();
+            }
+        };
+
+        window.deleteChatReply = (msgId, repId) => {
+            requireAuth(() => {
+                const m = data.chat.find(x => x.id == msgId);
+                if (m && m.replies) {
+                    m.replies = m.replies.filter(r => r.id !== repId);
+                    saveData();
+                    renderChat();
+                }
+            });
+        };
 
         // UTILS
         function changeLanguage() { currentLang = document.getElementById('langSelect').value; localStorage.setItem('syndicLang', currentLang); applyLanguage(); }
