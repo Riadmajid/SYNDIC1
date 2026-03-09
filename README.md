@@ -1382,7 +1382,7 @@
 
             ['dashStatMonth', 'expMonth'].forEach(id => {
                 let el = document.getElementById(id);
-                if (el) { el.innerHTML = `<option value="all">Full Year</option>` + monthOpts; el.value = now.getMonth() + 1; }
+                if (el) { el.innerHTML = `<option value="all">${t('opt_all_months') || 'All Months'}</option>` + monthOpts; el.value = 'all'; }
             });
 
             applyLanguage();
@@ -1420,7 +1420,7 @@
 
             document.getElementById('totalIncomes').innerText = `${inc} ${t('curr')}`;
             document.getElementById('totalExpenses').innerText = `${exp} ${t('curr')}`;
-            document.getElementById('boxBalance').innerText = `${globalInc - globalExp} ${t('curr')}`;
+            document.getElementById('boxBalance').innerText = `${inc - exp} ${t('curr')}`;
 
             renderFinancialChart(y);
             renderDashboardTable();
@@ -1429,12 +1429,6 @@
 
         function renderMonthlyStats(year, monthStr) {
             const container = document.getElementById('monthlyStatsContainer');
-            if (monthStr === 'all') {
-                container.innerHTML = `<div style="text-align:center; padding: 20px; color: #94a3b8;">${t('sel_month_stats') || 'Please select a specific month to view building statistics.'}</div>`;
-                return;
-            }
-
-            let month = parseInt(monthStr);
             let bldStats = [];
 
             data.buildings.forEach(b => {
@@ -1443,8 +1437,24 @@
 
                 let paidCount = 0;
                 apts.forEach(a => {
-                    let amt = data.payments[`${a.id}_${year}_${month}`];
-                    if (amt && amt > 0) paidCount++;
+                    if (monthStr === 'all') {
+                        // For 'all' months, check if they have any payment this year? 
+                        // Or better: check if they paid for ALL months so far?
+                        // User likely wants to see how many apartments are "up to date" or just have any payment.
+                        // Let's count how many have at least one payment in the selected year if 'all' is selected.
+                        let hasAnyPayment = false;
+                        for (let m = 1; m <= 12; m++) {
+                            if (data.payments[`${a.id}_${year}_${m}`] > 0) {
+                                hasAnyPayment = true;
+                                break;
+                            }
+                        }
+                        if (hasAnyPayment) paidCount++;
+                    } else {
+                        let m = parseInt(monthStr);
+                        let amt = data.payments[`${a.id}_${year}_${m}`];
+                        if (amt && amt > 0) paidCount++;
+                    }
                 });
 
                 bldStats.push({ name: b.name, paid: paidCount, total: apts.length });
@@ -1457,12 +1467,13 @@
 
             container.innerHTML = bldStats.map(b => {
                 let color = b.paid === b.total ? 'var(--success)' : (b.paid > 0 ? '#f59e0b' : 'var(--danger)');
+                let monthLabel = monthStr === 'all' ? (t('opt_all_months') || 'Yearly') : t('months')[parseInt(monthStr) - 1];
                 return `
                     <div style="background: white; border-radius: 12px; padding: 15px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
                         <div style="font-weight: bold;">🏢 ${b.name}</div>
                         <div style="text-align: right;">
                             <div style="color: ${color}; font-weight: 800; font-size: 18px;">${b.paid} / ${b.total}</div>
-                            <div style="font-size: 11px; color: #6b7280;">${t('txt_paid_month') || 'Paid in'} ${t('months')[month - 1]}</div>
+                            <div style="font-size: 11px; color: #6b7280;">${t('txt_paid_month') || 'Paid in'} ${monthLabel}</div>
                         </div>
                     </div>
                 `;
